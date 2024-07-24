@@ -1,0 +1,112 @@
+.modal-contenedor {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    transition: all .5s;
+    opacity: 0;
+    visibility: hidden;
+    background-color: rgba(0, 0, 0, 0.151);
+  }
+  
+  .modal-carrito {
+    position: relative;
+    background-color: white;
+    min-width: 500px;
+    padding: 20px;
+    margin-top: -100%;
+    transition: all .5s;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+
+
+  
+      h3 {
+        color: rgb(14, 88, 226);
+        padding-bottom: 5px;
+      }
+  
+      #btn-cerrar-carrito {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 20px;
+        color: rgb(58, 98, 231) !important;
+        border: none;
+        background-color: white;
+          
+        &:hover {
+          cursor: pointer;
+        }
+  
+        &:focus {
+          outline: none;
+        }
+      }
+  
+      .producto-precio {
+        padding-top: 10px;
+      }
+    }
+  
+  .modal-active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 5;
+  
+    .modal-carrito {
+      margin-top: 0;
+    }
+  }
+
+  .productoEnCarrito {
+    border-left: 5px solid rgb(34, 86, 255);
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+    margin: 5px 0;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    &:hover {
+      border-left: 5px solid rgb(65, 148, 225);
+    }
+
+    img {
+      width: 70px;
+    }
+
+    .info-producto-carrito {
+      font-size: 15px;
+    }
+
+    span {
+      text-align: right;
+    }
+  }
+
+
+  .boton-eliminar {
+    background-color: white;
+    color: #ff6961;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 5px -1px;
+  
+    &:hover {
+        cursor: pointer;
+        background-color: #ff6961;
+        color: white;
+      }
+  
+    &:focus {
+        outline: none;
+    }
+  }

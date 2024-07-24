@@ -1,0 +1,123 @@
+#producto-contenedor {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 100%;
+  height: 100%;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 400px;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    .card-image {
+      padding: 30px 30px 0 30px;
+
+      .card-title {
+        display: inline-block;
+        color: rgb(51, 116, 246);
+        position: unset;
+        font-size: 26px;
+        text-align: center;
+        width: 100%;
+        padding: 10px;
+      }
+    }
+
+    .card-content {
+        display: flex;
+        padding: 0 24px 24px 24px;
+        justify-content: space-around;
+        align-items: center;
+
+        p {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        a {
+            bottom: 24px;
+            right: 24px;
+          
+          .fa-cart-plus {
+            font-size: 20px;
+          }
+        }
+    }
+}
+
+p {
+  line-height: 1.8;
+}
+
+select {
+  display: inline;
+  text-align: center;
+  border: 1px solid lightskyblue;
+}
+
+#cesta-carrito {
+  display: inline-block;
+  width: 90px;
+  height: 80px;
+  font-size: 30px;
+  background-color: rgb(168, 194, 250);
+  color: #003df2;
+  border-radius: 10px;
+  border: none;
+  position: fixed;
+  overflow: hidden;
+  z-index: 2;
+  bottom: 80px;
+  right: 80px;
+  box-shadow:  0px 0px 10px 0px #00000088;
+
+  span {
+    color: #003df2;
+    font-size: 30px;
+    transition: all 0.5s ease-in;
+  }
+ 
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 100%;
+    transform: skew(15deg);
+    transition: all 0.3s;
+    overflow: hidden;
+    z-index: -1;
+  }
+
+  &::before {
+    left: -10px;
+    background: #1664f4;
+  }
+ 
+  &::after {
+    right: -10px;
+    background: #002fca;
+  }
+ 
+  &:hover::before,
+  &:hover::after {
+    width: 65%;
+  }
+
+  &:hover i {
+    color: #ffffff;
+    transition: 0.5s;
+  }
+ 
+  &:hover span {
+    color: #ffffff;
+    transition: 0.3s;
+  }
+}
