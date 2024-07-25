@@ -54,6 +54,7 @@ const validarProductoCarrito = (productoId) => {
   }
 };
 
+
 const pintarProductoCarrito = (producto) => {
   const carritoContenedor = document.getElementById('carrito-contenedor');
 
@@ -69,6 +70,7 @@ const pintarProductoCarrito = (producto) => {
   carritoContenedor.appendChild(div);
 };
 
+
 const eliminarProductoCarrito = (productoId) => {
   const productoIndex = carrito.findIndex((producto) => producto.id == productoId);
 
@@ -79,6 +81,7 @@ const eliminarProductoCarrito = (productoId) => {
   pintarCarrito(carrito);
   actualizarTotalCarrito(carrito);
 };
+
 
 const pintarCarrito = (carrito) => {
   const carritoContenedor = document.getElementById('carrito-contenedor');
@@ -171,9 +174,10 @@ modalForm.addEventListener('click', (event) => {
   event.stopPropagation();
 });
 
-
+//FORMULARIO
 document.getElementsByClassName('signupForm').addEventListener('submit', function(event){
   event.preventDefault();
+  
 
   const nombre = document.getElementById('nombre').value;
   const apellido = document.getElementById('apellido').value;
@@ -197,3 +201,28 @@ document.getElementsByClassName('signupForm').addEventListener('submit', functio
   alert('Usuario creado exitosamente');
 
 })
+
+
+//CHECKOUT
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(() => {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+
+      form.classList.add('was-validated')
+    }, false)
+  })
+})()
+
+
+ 
