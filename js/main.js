@@ -4,8 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
     actualizarTotalCarrito(carrito);
   });
   
-  const pintarProductos = (productos) => {
-    const contenedor = document.getElementById("producto-contenedor");
+const pintarProductos = (productos) => {
+  const contenedor = document.getElementById("producto-contenedor");
 
     productos.forEach(producto => {
         const div = document.createElement('div');
@@ -149,18 +149,16 @@ modalCarrito.addEventListener('click', (event) => {
     };
 });
 
+const btnToast = document.querySelector('.btn-floating');
 
-document.addEventListener('DOMContentLoaded', () => {
-    const btnToast = document.getElementById('btnToast');
-    btnToast.addEventListener('click', () => {
-        Toastify({
-            text: "Probando toast!",
-            duration: 2000,
-            gravity: 'bottom',
-            position: 'center',
-            style: {
-                background: 'linear-gradient(to right, #00b09b, #96c92d)'
-            }
-        }).showToast();
-    });
+btnToast.addEventListener('click', () => {
+    Toastify({
+        text: "Probando toast!",
+        duration: 2000,
+        gravity: 'bottom',
+        position: 'center',
+        style: {
+            background: 'linear-gradient(to right, #00b09b, #96c92d)'
+        }
+    }).showToast();
 });
