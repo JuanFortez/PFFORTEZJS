@@ -40,37 +40,40 @@
     </div>
   </div>
 
-  <form class="form">
-    <p class="title">Register </p>
-    <p class="message">Signup now and get full access to our app. </p>
-        <div class="flex">
-        <label>
-            <input required="" placeholder="" type="text" class="input">
-            <span>Firstname</span>
-        </label>
-
-        <label>
-            <input required="" placeholder="" type="text" class="input">
-            <span>Lastname</span>
-        </label>
-    </div>  
-            
-    <label>
-        <input required="" placeholder="" type="email" class="input">
-        <span>Email</span>
-    </label> 
-        
-    <label>
-        <input required="" placeholder="" type="password" class="input">
-        <span>Password</span>
-    </label>
-    <label>
-        <input required="" placeholder="" type="password" class="input">
-        <span>Confirm password</span>
-    </label>
-    <button class="submit">Submit</button>
-    <p class="signin">Already have an acount ? <a href="#">Signin</a> </p>
-</form>
+  <div class="signupForm">
+    <form class="form">
+      <p class="title">Registrarse</p>
+      <button id="btn-cerrar-form"><i class="fas fa-times-circle"></i></button>
+      <p class="message">Registrate para acceder a descuentos y promociones. </p>
+          <div class="flex">
+          <label>
+              <input id="nombre" name="nombre" required="" placeholder="" type="text" class="input">
+              <span>Nombre</span>
+          </label>
+  
+          <label>
+              <input id="apellido" name="apellido" required="" placeholder="" type="text" class="input">
+              <span>Apellido</span>
+          </label>
+      </div>  
+              
+      <label>
+          <input id="email" name="email" required="" placeholder="" type="email" class="input">
+          <span>Email</span>
+      </label> 
+          
+      <label>
+          <input id="contrasena" name="contraseña" required="" placeholder="" type="password" class="input">
+          <span>Contraseña</span>
+      </label>
+      <label>
+          <input id="contrasenaConfirmar" name="contraseña" required="" placeholder="" type="password" class="input">
+          <span>Confirmar contraseña</span>
+      </label>
+      <button class="submit">Submit</button>
+      <p class="signin">¿Ya tienes cuenta? <a href="#">Iniciar Sesion</a> </p>
+  </form>
+  </div>
 
   <script src="/data/stock.js"></script>
   <script src="/js/main.js"></script>

@@ -1,3 +1,19 @@
+.signupForm {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    transition: all .5s;
+    opacity: 0;
+    visibility: hidden;
+    background-color: rgba(0, 0, 0, 0.151);
+  }
+
 .form {
     display: flex;
     flex-direction: column;
@@ -14,11 +30,48 @@
       position: relative;
   
       .input {
-        width: 100%;
-        outline: 0;
-        border: 1px solid rgba(105, 105, 105, 0.397);
-        border-radius: 10px;
+          border: none;
+          outline: none;
+          border-radius: 15px;
+          background-color: #ffffff;
+          box-shadow: 0 0 5px rgba(0,0,0,0.3);
+          transition: 300ms ease-in-out;
+
+          &:focus {
+            background-color: white;
+            transform: scale(1.05);
+            box-shadow: 13px 13px 100px #969696,
+                     -13px -13px 100px #ffffff;
+        }
+
+        + span {
+          position: absolute;
+          left: 10px;
+          top: 15px;
+          color: grey;
+          font-size: 0.9em;
+          cursor: text;
+          transition: 0.3s ease;
+        }
       }
+    }
+  }
+
+  #btn-cerrar-form {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 20px;
+    color: rgb(58, 98, 231) !important;
+    border: none;
+    background-color: white;
+      
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:focus {
+      outline: none;
     }
   }
   
@@ -81,30 +134,18 @@
     width: 100%;
     gap: 6px;
   }
-  
-  .form label .input + span {
-    position: absolute;
-    left: 10px;
-    top: 15px;
-    color: grey;
-    font-size: 0.9em;
-    cursor: text;
-    transition: 0.3s ease;
-  }
+
   
   .form label .input:placeholder-shown + span {
     top: 15px;
-    font-size: 0.9em;
+    font-size: 12px;
   }
   
-  .form label .input:focus + span,.form label .input:valid + span {
-    top: 30px;
-    font-size: 0.7em;
-    font-weight: 600;
-  }
-  
+  .form label .input:focus + span,
   .form label .input:valid + span {
-    color: green;
+    top: 30px;
+    font-size: 10px;
+    font-weight: 600;
   }
   
   .submit {
@@ -132,5 +173,15 @@
     to {
       transform: scale(1.8);
       opacity: 0;
+    }
+  }
+
+.form-active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 5;
+  
+    .form {
+      margin-top: 0;
     }
   }

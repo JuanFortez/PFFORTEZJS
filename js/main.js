@@ -17,7 +17,7 @@ const pintarProductos = (productos) => {
             </div>
             <div class="card-content">
                 <p>$${producto.precio}</p>
-                <a class="btn-floating halfway-fab wabes-effect waves-light blue"><i id=${producto.id} class="fas fa-cart-plus agregar"></i></a>
+                <a id="btn-toast" class="btn-floating halfway-fab wabes-effect waves-light blue"><i id=${producto.id} class="fas fa-cart-plus agregar"></i></a>
             </div>        
             `
 
@@ -123,7 +123,7 @@ const guardarCarritoStorage = (carrito) => {
 };
 
 //----------------------------------------------------------------------
-
+//CARRITO
 const modalContenedor = document.querySelector('.modal-contenedor');
 const abrirCarrito = document.getElementById('cesta-carrito');
 const cerrarCarrito = document.getElementById('btn-cerrar-carrito');
@@ -149,16 +149,51 @@ modalCarrito.addEventListener('click', (event) => {
     };
 });
 
-const btnToast = document.querySelector('.btn-floating');
+//FORMULARIO
+const formContenedor = document.querySelector('.signupForm');
+const abrirForm = document.getElementById('login');
+const cerrarForm = document.getElementById('btn-cerrar-form');
+const modalForm = document.querySelector('.form');
 
-btnToast.addEventListener('click', () => {
-    Toastify({
-        text: "Probando toast!",
-        duration: 2000,
-        gravity: 'bottom',
-        position: 'center',
-        style: {
-            background: 'linear-gradient(to right, #00b09b, #96c92d)'
-        }
-    }).showToast();
+abrirForm.addEventListener('click', () => {
+  formContenedor.classList.toggle('form-active')
 });
+
+cerrarForm.addEventListener('click', () => {
+  formContenedor.classList.toggle('form-active')
+});
+
+formContenedor.addEventListener('click', () => {
+  cerrarForm.click()
+});
+
+modalForm.addEventListener('click', (event) => {
+  event.stopPropagation();
+});
+
+
+document.getElementsByClassName('signupForm').addEventListener('submit', function(event){
+  event.preventDefault();
+
+  const nombre = document.getElementById('nombre').value;
+  const apellido = document.getElementById('apellido').value;
+  const email = document.getElementById('email').value;
+  const contrasena = document.getElementById('contrasena').value;
+  const contrasenaConfirmar = document.getElementById('contrasenaConfirmar').value;
+
+  const userData = {
+    nombre: nombre,
+    apellido: apellido,
+    email: email,
+    contrasena: contrasena,
+    contrasenaConfirmar: contrasenaConfirmar
+  };
+
+  const userDataJSON = JSON.stringify(userData);
+  localStorage.setItem('userData', userDataJSON);
+
+  this.reset();
+
+  alert('Usuario creado exitosamente');
+
+})
