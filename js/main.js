@@ -174,11 +174,15 @@ modalForm.addEventListener('click', (event) => {
   event.stopPropagation();
 });
 
-//FORMULARIO
-document.getElementsByClassName('signupForm').addEventListener('submit', function(event){
-  event.preventDefault();
-  
 
+//FORMULARIO
+const signupForm =document.getElementsByClassName('signupForm')[0];
+
+signupForm.addEventListener('submit', function(event){
+  event.preventDefault();
+
+  const form = event.target;
+  
   const nombre = document.getElementById('nombre').value;
   const apellido = document.getElementById('apellido').value;
   const email = document.getElementById('email').value;
@@ -195,34 +199,18 @@ document.getElementsByClassName('signupForm').addEventListener('submit', functio
 
   const userDataJSON = JSON.stringify(userData);
   localStorage.setItem('userData', userDataJSON);
+  
+  form.reset();
 
-  this.reset();
-
-  alert('Usuario creado exitosamente');
-
+  Swal.fire({
+    position: "top-end",
+    icon: "success",
+    title: "Usuario creado con exito",
+    showConfirmButton: false,
+    timer: 1500
+  });
 })
 
-
-//CHECKOUT
-// Example starter JavaScript for disabling form submissions if there are invalid fields
-(() => {
-  'use strict'
-
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  const forms = document.querySelectorAll('.needs-validation')
-
-  // Loop over them and prevent submission
-  Array.from(forms).forEach(form => {
-    form.addEventListener('submit', event => {
-      if (!form.checkValidity()) {
-        event.preventDefault()
-        event.stopPropagation()
-      }
-
-      form.classList.add('was-validated')
-    }, false)
-  })
-})()
 
 
  
