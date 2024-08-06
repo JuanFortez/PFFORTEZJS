@@ -12,22 +12,27 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <!-- CDN sweetalert -->
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <!-- CDN toastify -->
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/  toastify-js/src/toastify.min.css">
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
   <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
 
-  <header>
-    <h1>Tienda Online</h1>
-    <a id="login" class="login-active"><i class="fas fa-user"></i></a>
+  <header id="header-main">
+    <h1>FORTEZ SHOP</h1>
+    <div class="btn-header">
+      <input type="text" id="buscador" placeholder="Buscar..." autocomplete="off">
+      <button id="cesta-carrito"><i class="fas fa-shopping-cart"></i><span id="contador-carrito">0</span></button>
+      <a id="login" class="login-active"><i class="fas fa-user"></i></a>
+    </div>
   </header>
 
-  <main id="producto-contenedor">
-    <button id="cesta-carrito"><i class="fas fa-shopping-cart"></i><span id="contador-carrito">0</span></button>
+  <main>
+    <div id="producto-contenedor">
+
+    </div>
+    <div id="alerta-nada">No se encuentra el producto</div>
   </main>
+
 
   <!-- Modal Carrito -->
   <div class="modal-contenedor">
@@ -39,6 +44,7 @@
       </div>
       <div class="total-pagar">
         <p class="precioProducto">Precio total: $<span id="precioTotal"></span></p>
+        <button class="btn-pagar"><a href="pages/checkout.html">PAGAR</a></button>
       </div>
     </div>
   </div>

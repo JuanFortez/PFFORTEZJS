@@ -1,29 +1,56 @@
 document.addEventListener('DOMContentLoaded', () => {
-    pintarProductos(productos);
-    pintarCarrito(carrito);
-    actualizarTotalCarrito(carrito);
-  });
+  displayProductos(productos);
+  pintarCarrito(carrito);
+  actualizarTotalCarrito(carrito);
+});
   
-const pintarProductos = (productos) => {
-  const contenedor = document.getElementById("producto-contenedor");
+const shopContent = document.getElementById('producto-contenedor');
+const inputBuscar = document.getElementById('buscador');
+const sinResultados = document.getElementById('alerta-nada');
 
-    productos.forEach(producto => {
-        const div = document.createElement('div');
-        div.classList.add('card');
-        div.innerHTML += `
-            <div class="card-image">
-                <img src=${producto.imagen}>
-                <span class="card-title">${producto.nombre}</span>
-            </div>
-            <div class="card-content">
-                <p>$${producto.precio}</p>
-                <a id="btn-toast" class="btn-floating halfway-fab wabes-effect waves-light blue"><i id=${producto.id} class="fas fa-cart-plus agregar"></i></a>
-            </div>        
-            `
+const displayProductos = (productos) => {
+  shopContent.innerHTML = '';
 
-        contenedor.appendChild(div);
+  if (productos.length === 0) {
+    sinResultados.style.display = 'block';
+  }else{
+    productos.forEach((producto) => {
+      const content = document.createElement('div');
+      content.className = 'card';
+  
+      content.innerHTML = `
+        <div class="card-image">
+          <img src="${producto.imagen}">
+          <span class="card-title">${producto.nombre}</span>
+        </div>
+        <div class="card-content">
+          <p>$${producto.precio}</p>
+          <a id="btn-toast" class="btn-floating halfway-fab wabes-effect waves-light blue"><i id=${producto.id} class="fas fa-cart-plus agregar"></i></a>
+        </div>     
+      `;
+
+      shopContent.append(content);
     });
+
+    sinResultados.style.display = 'none';
+  }
 };
+
+const handleSearch = () => {
+  const searchTerm = inputBuscar.value.toLowerCase();
+  const filteredProducts = productos.filter((producto) => producto.nombre.toLocaleLowerCase().startsWith(searchTerm));
+
+  displayProductos(filteredProducts);
+};
+
+fetch('./stock.json')
+  .then((response) => response.json())
+  .then((productos) => {
+    productos = data;
+    displayProductos(productos);
+  });
+
+inputBuscar.addEventListener('input', handleSearch);
 
 //----------------------------------------------------------------------
 
@@ -62,6 +89,7 @@ const pintarProductoCarrito = (producto) => {
   div.classList.add('productoEnCarrito');
 
   div.innerHTML += `
+    <img src="${producto.imagen}" alt="">
     <p>${producto.nombre}</p>
     <p>$ ${producto.precio}</p>
     <p id=cantidad${producto.id}>Cantidad: ${producto.cantidad}</p>
@@ -93,7 +121,7 @@ const pintarCarrito = (carrito) => {
     div.classList.add('productoEnCarrito');
 
     div.innerHTML += `
-      <img src=${producto.imagen} alt="">
+      <img src="${producto.imagen}" alt="">
       <div class="info-producto-carrito">
         <p>${producto.nombre}</p>
         <p id=cantidad${producto.id}>Cantidad: ${producto.cantidad}</p>
@@ -213,4 +241,3 @@ signupForm.addEventListener('submit', function(event){
 
 
 
- 

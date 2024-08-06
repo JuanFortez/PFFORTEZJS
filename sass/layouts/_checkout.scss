@@ -1,0 +1,240 @@
+.datos-cliente {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+
+        .needs-validation {
+            margin-top: 30px;
+            width: 710px;
+            padding: 20px;
+            box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+            border-radius: 15px;
+        
+            .datos {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                padding: 0 0 20px 0;
+                border-bottom: 1px solid black;
+                gap: 10px;
+
+                .data-fnm {
+                    display: flex;
+                    flex-direction: column;
+                    width: 330px;
+                    flex-wrap: wrap;
+
+                    input {
+                        padding: 10px;
+                        border: none;
+                        border-radius: 10px;
+                        background-color: rgb(224, 224, 224);
+                    }
+                }
+
+                .data-lnm {
+                    display: flex;
+                    flex-direction: column;
+                    width: 330px;
+                    flex-wrap: wrap;
+
+                    input {
+                        padding: 10px;
+                        border: none;
+                        border-radius: 10px;
+                        background-color: rgb(224, 224, 224);
+                    }
+                }
+
+                .data-col {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    
+                    input {
+                        padding: 10px;
+                        border: none;
+                        border-radius: 10px;
+                        background-color: rgb(224, 224, 224);
+                    }
+                }
+
+                .data-country {
+                    display: flex;
+                    flex-direction: column;
+                    width: 30%;
+
+                    select {
+                        padding: 10px;
+                        border: none;
+                        border-radius: 10px;
+                        background-color: rgb(224, 224, 224);
+                    }
+                }
+
+                .data-state {
+                    display: flex;
+                    flex-direction: column;
+                    width: 30%;
+                    
+                    select {
+                        padding: 10px;
+                        border: none;
+                        border-radius: 10px;
+                        background-color: rgb(224, 224, 224);
+                    }
+                }
+
+                .data-zip {
+                    display: flex;
+                    flex-direction: column;
+                    width: 30%;
+
+                    input {
+                        padding: 10px;
+                        border: none;
+                        border-radius: 10px;
+                        background-color: rgb(224, 224, 224);
+                    }
+                }
+            }
+
+            .form-checks {
+                padding: 10px 0 10px 0;
+            }
+
+            .datos-pago {
+                border-top: 1px solid black;
+                border-bottom: 1px solid black;
+                padding: 20px 0 20px 0;
+
+                h4 {
+                    margin: 0;
+                }
+
+                .datos-tarjeta {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 10px;
+                    flex-wrap: wrap;
+
+                    .cc-info {
+                        display: flex;
+                        flex-direction: column;
+
+                        .card-data {
+                            padding: 10px;
+                            border: none;
+                            border-radius: 10px;
+                            background-color: rgb(224, 224, 224);
+                        }
+
+                        #name-card {
+                            width: 300px;
+                        }
+
+                        #number-card {
+                            width: 300px;
+                        }
+
+                        #date-exp-card {
+                            width: 80px;
+                        }
+
+                        #cvv-card {
+                            width: 80px;
+                        }
+                    }
+                }
+            }
+
+            .boton-checkout {
+                display: flex;
+                justify-content: flex-end;
+                padding-top: 10px;
+
+                #checkout-btn {
+                    width: 250px;
+                    padding: 15px;
+                    font-size: 17px;
+                    border: none;
+                    border-radius: 30px;
+                    background-color: rgb(0, 0, 0);
+                    color: white;
+                    font-weight: bold;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: rgba(0, 0, 0, 0.685);
+                    }
+                }
+            }
+
+            .invalid-feedback {
+                opacity: 0;
+            }
+        }
+    }
+
+    .checkout-container {
+        display: flex;
+        flex-direction: column;
+        max-height: 400px;
+        margin: 30px;
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+        border-radius: 15px;
+        
+        h2 {
+            text-align: center;
+            margin-top: 15px;
+            margin-bottom: 0;
+            color: #000;
+            position: static;
+        }
+
+        .carrito-checkout {
+            overflow-y: scroll;
+            
+            #cart {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                width: 450px;
+                gap: 10px;
+                padding: 5px;
+        
+                .carritoCheckout {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+        
+                    img {
+                        width: 100px;
+                      }
+        
+                    h6 {
+                        font-size: 15px;
+                        margin: 0;
+                    }
+        
+                    span {
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+    }
+
+
+/*
+
+
+
+
+
+
+*/
+
+
+

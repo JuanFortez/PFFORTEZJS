@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Checkout</title>
+</head>
+
+<body>
+
+<header id="header-checkout">
+    <h1>FORTEZ SHOP</h1>
+    <div class="btn-header-back">
+        <a href="../index.html">🡨</a>
+    </div>
+</header>
+
+<main>
+    <div class="datos-cliente">
+        <form class="needs-validation" novalidate>
+            <div class="datos">
+                <div class="data-fnm">
+                    <label for="firstName" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                    <div class="invalid-feedback">
+                        Ingresa un nombre valido.
+                    </div>
+                </div>
+        
+                <div class="data-lnm">
+                    <label for="lastName" class="form-label">Apellido</label>
+                    <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                    <div class="invalid-feedback">
+                        Ingresa un apellido valido.
+                    </div>
+                </div>
+        
+                <div class="data-col">
+                    <label for="email" class="form-label">Email <span class="text-body-secondary">(Opcional)</span></label>
+                    <input type="email" class="form-control" id="email" placeholder="Email">
+                    <div class="invalid-feedback">
+                        Por favor ingresa un correo electronico valido.
+                    </div>
+                </div>
+        
+                <div class="data-col">
+                    <label for="address" class="form-label">Dirección</label>
+                    <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+                    <div class="invalid-feedback">
+                        Por favor, ingresa una dirección.
+                    </div>
+                </div>
+        
+                <div class="data-col">
+                    <label for="address2" class="form-label">Dirección 2 <span class="text-body-secondary">(Opcional)</span></label>
+                    <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
+                </div>
+        
+                <div class="data-country">
+                    <label for="country" class="form-label">País</label>
+                    <select class="form-select" id="country" required>
+                        <option value="">Selecciona...</option>
+                        <option>Argentina</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Por favor, selecciona un país.
+                    </div>
+                </div>
+        
+                <div class="data-state">
+                    <label for="state" class="form-label">Provincia</label>
+                    <select class="form-select" id="state" required>
+                        <option value="">Selecciona...</option>
+                        <option>Córdoba</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Por favor, selecciona una provincia.
+                    </div>
+                </div>
+        
+                <div class="data-zip">
+                    <label for="zip" class="form-label">Código postal</label>
+                    <input type="text" class="form-control" id="codigoPostal" placeholder="Código postal" required>
+                    <div class="invalid-feedback">
+                        Se requiere del código postal.
+                    </div>
+                </div>
+            </div>
+        
+        
+        <div class="form-checks">
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="same-address">
+                <label class="form-check-label" for="same-address">Shipping address is the same as my billing address</label>
+            </div>
+        
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="save-info">
+                <label class="form-check-label" for="save-info">Guardar esta información para la proxima vez</label>
+            </div>
+        </div>
+        
+        
+        <div class="datos-pago">
+            <h4>Payment</h4>
+        
+            <div>
+                <div class="form-check">
+                <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
+                <label class="form-check-label" for="credit">Credit card</label>
+                </div>
+                <div class="form-check">
+                <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required>
+                <label class="form-check-label" for="debit">Debit card</label>
+                </div>
+                <div class="form-check">
+                <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required>
+                <label class="form-check-label" for="paypal">PayPal</label>
+                </div>
+            </div>
+        
+            <div class="datos-tarjeta">
+                <div class="cc-info">
+                    <label for="cc-name" class="form-label">Name on card</label>
+                    <input type="text" class="card-data" id="name-card" placeholder="" required>
+                    <small class="text-body-secondary">Full name as displayed on card</small>
+                    <div class="invalid-feedback">
+                        Se requiere nombre de la tarjeta.
+                    </div>
+                </div>
+        
+                <div class="cc-info">
+                    <label for="cc-number" class="form-label">Credit card number</label>
+                    <input type="text" class="card-data" id="number-card" placeholder="" required>
+                    <div class="invalid-feedback">
+                        Se requiere un número de tarjeta.
+                    </div>
+                </div>
+        
+                <div class="cc-info">
+                    <label for="cc-expiration" class="form-label">Expiration</label>
+                    <input type="text" class="card-data" id="date-exp-card" placeholder="" required>
+                    <div class="invalid-feedback">
+                        Se requiere fecha de expiración.
+                    </div>
+                </div>
+        
+                <div class="cc-info">
+                    <label for="cc-cvv" class="form-label">CVV</label>
+                    <input type="text" class="card-data" id="cvv-card" placeholder="" required>
+                    <div class="invalid-feedback">
+                        Se requiere CVV.
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="boton-checkout">
+            <button id="checkout-btn" type="submit">Continuar con el pago</button>
+        </div>
+        </form>
+    
+
+    <div class="checkout-container">
+        <h2>Carrito</h2>
+        <div class="carrito-checkout">
+            <div id="cart">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</main>
+
+    <script src="../data/stock.js"></script>
+    <script src="../js/checkout.js"></script>
+
+</body>
+</html>
