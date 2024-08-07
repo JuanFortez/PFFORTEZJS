@@ -7,7 +7,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 const checkoutButton = document.getElementById('checkout-btn');
-checkoutButton.addEventListener('click', () => {
+
+checkoutButton.addEventListener('click', (event) => {
+  event.preventDefault();
+
   const form = document.querySelector('.needs-validation');
   const formIsValid = form.checkValidity();
   const saveInfoChecked = document.getElementById('save-info').checked;
@@ -16,9 +19,21 @@ checkoutButton.addEventListener('click', () => {
     if (saveInfoChecked) {
       guardarDatosCliente();
     }
+
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "Gracias por su compra!",
+      showConfirmButton: false,
+      timer: 1500
+    }).then(() => {
+      localStorage.removeItem('carrito');
+      carrito = [];
+      window.location.reload();
+    });
   } else {
     form.classList.add('was-validated');
-  };
+  }
 });
 
 const guardarDatosCliente = () => {
