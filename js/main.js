@@ -52,7 +52,6 @@ fetch('./stock.json')
 
 inputBuscar.addEventListener('input', handleSearch);
 
-//----------------------------------------------------------------------
 
 let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
@@ -153,8 +152,6 @@ const guardarCarritoStorage = (carrito) => {
   localStorage.setItem('carrito', JSON.stringify(carrito));
 };
 
-//----------------------------------------------------------------------
-//CARRITO
 const modalContenedor = document.querySelector('.modal-contenedor');
 const abrirCarrito = document.getElementById('cesta-carrito');
 const cerrarCarrito = document.getElementById('btn-cerrar-carrito');
@@ -180,7 +177,6 @@ modalCarrito.addEventListener('click', (event) => {
     };
 });
 
-//FORMULARIO
 const formContenedor = document.querySelector('.signupForm');
 const abrirForm = document.getElementById('login');
 const cerrarForm = document.getElementById('btn-cerrar-form');
@@ -203,7 +199,6 @@ modalForm.addEventListener('click', (event) => {
 });
 
 
-//FORMULARIO
 const signupForm =document.getElementsByClassName('signupForm')[0];
 
 signupForm.addEventListener('submit', function(event){
